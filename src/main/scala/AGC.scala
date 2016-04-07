@@ -27,8 +27,6 @@ override val io = new AGCIO(gen)
 	
 	val Inside_G = Mux(io.Vref===io.Vout, reg_G,Mux(io.Vref>io.Vout, reg_G + io.delta, reg_G - io.delta))
 //	val delta = gen
-
-	
 //	when(io.Vref === io.Vout){
 //		Inside_G := reg_G
 //	}
