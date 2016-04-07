@@ -24,7 +24,7 @@ class AGCIO[T <: DSPQnm[T]](gen : => T) extends IOBundle {
 	}
 override val io = new AGCIO(gen)
 	val reg_G = RegInit(double2T(1.0))
-
+	
 	val Inside_G = Mux(io.Vref===io.Vout, reg_G,Mux(io.Vref>io.Vout, reg_G + io.delta, reg_G - io.delta))
 //	val delta = gen
 
@@ -37,7 +37,7 @@ override val io = new AGCIO(gen)
 //	Inside_G := gen(reg_G.toUINT)*(io.Vref.toUINT)/(io.Vout.toUINT)
 //	}
 println(p.AGC.maxdelta)
-reg_G:= Inside_G
+reg_G:= Inside_G.shorten(reg_G.getRange)
 io.G := Inside_G
 
 }

@@ -1,7 +1,7 @@
 {
   "complex":{
 
-    "intBits":1,
+    "intBits":4,
     "fracBits":14,
     "use4Muls":true,
     "mulPipe":3,
