@@ -25,5 +25,4 @@ step(1)
 //poke(c.io.Vout, 4.0)
 //poke(c.io.delta, 1)
 //expect(c.io.G, 0)
-//step(1)
 }
